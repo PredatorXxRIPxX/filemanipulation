@@ -96,11 +96,15 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
+        if(args[0].isEmpty()||args[1].isEmpty()){
+            System.err.println("You need to give the two path in terminal");
+            return;
+        }
         try {
-            main.copierFichier("hello.txt","goodbye.txt");
-            main.copierFichierChar("hello.txt","goodbye2.txt");
-            main.copierFichierSimple("hello.txt","goodbye3.txt");
-            main.copierKeyBoard("keyboard.txt");
+            main.copierFichier(args[0],args[1]);
+            main.copierFichierChar(args[0],args[1]);
+            main.copierFichierSimple(args[0],args[1]);
+            main.copierKeyBoard(args[1]);
         } catch (IOException e) {
             e.printStackTrace();
         }
